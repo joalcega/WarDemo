@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspenCapital.Data.War\AspenCapital.Data.War.csproj" />
+    <ProjectReference Include="..\AspenCapital.Models.War\AspenCapital.Models.War.csproj" />
+  </ItemGroup>
+
+</Project>

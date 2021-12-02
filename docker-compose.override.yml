@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  aspencapital-war-db:
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Rpe1234!
+      - TZ=America/Los_Angeles
+    ports:
+      - 14331:1433
+  aspencapital-war-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44398
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=!Password123
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    ports:
+      - "65335:80"
+      - "44398:443"
+    volumes:
+      - ${APPDATA}/ASP.NET/Https:/https:ro
